@@ -1,6 +1,10 @@
 package com.vangood.lib
 
 open class Student (var name:String,var english:Int,var math:Int){
+    companion object{
+        val pass =60
+    }
+
     constructor() : this("",0,0){
         println("Hi!!")
     }
@@ -9,7 +13,8 @@ open class Student (var name:String,var english:Int,var math:Int){
     }
     //Methods
     fun print(){
-        println("$name\t$english\t$math\t${average()}")
+        print("$name\t$english\t$math\t${average()}")
+        if(average() < pass)println("*")else println()
     }
  /*   fun average() : Int {
         return (english+math)/2
@@ -41,10 +46,11 @@ open class Student (var name:String,var english:Int,var math:Int){
 }
 
 fun main() {
-    val hank = Student("Hank")
+    val hank = Student("Hank",60,40)
     val jack = Student("Jack",85,65)
 
     //println("${jack.name}\t${jack.english}\t${jack.math}")
+
     jack.print()
     hank.print()
 }
