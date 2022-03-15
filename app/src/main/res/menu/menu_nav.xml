@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/acion_a"
+        android:id="@+id/acion_guess"
         android:icon="@android:drawable/stat_notify_sdcard"
         android:title=" Item A" />
     <item

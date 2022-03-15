@@ -8,20 +8,21 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.vangood.bmi.databinding.FragmentBlankBinding
 
-class BlankFragment  :Fragment(){
-    lateinit var binding :FragmentBlankBinding
+import com.vangood.bmi.databinding.FragmentGuessBinding
+
+class GuessFragment  :Fragment(){
+    lateinit var binding :FragmentGuessBinding
     val viewModel by viewModels<GuessViewModel> ()
     companion object{
-        val TAG = BlankFragment::class.java.simpleName
+        val TAG = GuessFragment::class.java.simpleName
     }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBlankBinding.inflate(inflater)
+        binding = FragmentGuessBinding.inflate(inflater)
         return binding.root
     }
 
