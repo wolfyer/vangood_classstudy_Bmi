@@ -3,7 +3,9 @@ package com.vangood.bmi
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.room.Room
 import com.vangood.bmi.databinding.ActivityMainBinding
+import kotlin.concurrent.thread
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,6 +42,13 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+        //insert database
+        val t1=Transaction(1,"hank","20220315",3000,1)
+        val database = Room.databaseBuilder(this,TranDatabase::class.java,"trans.db")
+            .build()
+           thread{
+               database.tranDao().insert(t1)
+           }
     }
 
     private fun initFragments() {
