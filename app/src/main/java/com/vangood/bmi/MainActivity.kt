@@ -20,7 +20,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initFragment()
+    }
 
+    private fun initFragment() {
+        val guess1to10Fragment = BlankFragment()
+        val transaction =supportFragmentManager.beginTransaction()
+        transaction.add(R.id.container,guess1to10Fragment)
+            .commit()
     }
 
 }

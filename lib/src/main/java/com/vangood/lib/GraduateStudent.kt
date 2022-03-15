@@ -10,5 +10,5 @@ fun main(){
     var jenny =GraduateStudent("Jenny",90,66)
     //jenny.toString()//沒繼承就有的三種功能
     //屬性跟方法才被繼承，建構子不被繼承
-    jenny.print()
+    //jenny.print()
 }
