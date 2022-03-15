@@ -25,9 +25,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFragment() {
         val guess1to10Fragment = BlankFragment()
-        val transaction =supportFragmentManager.beginTransaction()
-        transaction.add(R.id.container,guess1to10Fragment)
-            .commit()
+        /*val transaction =supportFragmentManager.beginTransaction()
+            transaction.add(R.id.container,guess1to10Fragment)
+            .commit()*/
+        //Kotlin way
+        //.run run run bye bye return = Int can not use
+        //.apply return = Fragment bag.apply put tea coffee than to person
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.container,guess1to10Fragment)
+            commit()
+        }
     }
 
 }
